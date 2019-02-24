@@ -127,7 +127,7 @@ class Login extends Component {
                         <form>
                         <FormControl required className={classes.logFm}>
                             <InputLabel
-                                htmlFor='loginPassword'
+                                htmlFor='logPwd'
                                 classes={{
                                     root: classes.inputLabel,
                                     focused: classes.inputFocused,

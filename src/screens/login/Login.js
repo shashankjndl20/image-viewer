@@ -19,14 +19,20 @@ const styles = theme => ({
         marginTop: 15,
         padding: 40,
     },
-    loginForm: {
-        width: '100%',
-        marginTop: 20,
+   
+    loginButton: {
+       // // marginTop: 10,
     },
+    
     inputLabel: {
         '&$inputFocused': {
             color: indigo[500],
         },
+    },
+    
+    loginForm: {
+        width: '100%',
+        marginTop: 20,
     },
     inputFocused: {},
     inputUnderline: {
@@ -34,9 +40,7 @@ const styles = theme => ({
             borderBottomColor: indigo[500],
         },
     },
-    loginButton: {
-       // // marginTop: 10,
-    },
+    
 });
 
 class Login extends Component {

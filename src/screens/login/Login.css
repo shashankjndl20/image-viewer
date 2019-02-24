@@ -1,1 +1,6 @@
-
+#logBtn {
+  background: blue;
+  border-radius: 8px;
+  color: white;
+  padding: 10px 16px;
+}

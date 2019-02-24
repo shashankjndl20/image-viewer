@@ -2,37 +2,34 @@ import React, { Component } from 'react';
 import './Login.css';
 import { withStyles } from '@material-ui/core/styles';
 import Header from '../../common/header/Header';
+import Input from '@material-ui/core/Input';
+import indigo from '@material-ui/core/colors/indigo';
+import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
-import indigo from '@material-ui/core/colors/indigo';
-import Button from '@material-ui/core/Button';
 import FormHelperText from '@material-ui/core/FormHelperText';
 
 const styles = theme => ({
-    card: {
-        maxWidth: '25%',
+    card1: {
+        maxWidth: '30%',
+         marginTop: 18,
         margin: 'auto',
-        marginTop: 15,
-        padding: 40,
+       
+        padding: 50,
     },
    
-    loginButton: {
-       // // marginTop: 10,
-    },
-    
+   
     inputLabel: {
         '&$inputFocused': {
             color: indigo[500],
         },
     },
-    
-    loginForm: {
+    logFm: {
         width: '100%',
-        marginTop: 20,
+        marginTop: 25,
     },
     inputFocused: {},
     inputUnderline: {
@@ -50,11 +47,11 @@ class Login extends Component {
         sessionStorage.setItem('access-token', '11222840801.f3fe1ea.54bee85b35d045aabcc9580f743c0dc2');
         // sessionStorage.removeItem('access-token');
         this.state = {
-            mockUsername: 'user',
-            mockPassword: '123',
-            loginUsername: '',
+            Username: 'screw_you_thanos',
+            Password: 'thaniosgay',
+            logUname: '',
             usernameRequired: false,
-            loginPassword: '',
+            logPwd: '',
             passwordRequired: false,
             incorrectCredentials: false,
         }
@@ -62,19 +59,19 @@ class Login extends Component {
 
 
     inputUsernameChangeHandler = (event) => {
-        this.setState({loginUsername: event.target.value})
+        this.setState({logUname: event.target.value})
     }
 
     inputPasswordChangeHandler = (event) => {
-        this.setState({loginPassword: event.target.value})
+        this.setState({logPwd: event.target.value})
     }
 
     loginClickHandler = () => {
-        this.state.loginUsername === '' ? this.setState({usernameRequired: true}) : this.setState({usernameRequired: false});
-        this.state.loginPassword === '' ? this.setState({passwordRequired: true}) : this.setState({passwordRequired: false});
+        this.state.logUname === '' ? this.setState({usernameRequired: true}) : this.setState({usernameRequired: false});
+        this.state.logPwd === '' ? this.setState({passwordRequired: true}) : this.setState({passwordRequired: false});
 
-        if (this.state.loginUsername && this.state.loginPassword) {
-            if (this.state.mockUsername === this.state.loginUsername || this.state.mockPassword === this.state.loginPassword) {
+        if (this.state.logUname && this.state.logPwd) {
+            if (this.state.Username === this.state.logUname || this.state.Password === this.state.logPwd) {
                 sessionStorage.setItem('access-token', '11222840801.f3fe1ea.54bee85b35d045aabcc9580f743c0dc2');
                 this.props.history.push('/home');
             } else {
@@ -92,22 +89,16 @@ class Login extends Component {
         return (
             <div>
 
-                {/* header */}
+             
                 <Header />
-
-                {/* card */}
-                <Card className={classes.card}>
+                <Card className={classes.card1}>
                     <CardContent>
-
-                        {/* login heading*/}
-                        <Typography variant='h5'>
+                        <Typography variant='h4'>
                             LOGIN
                         </Typography>
-
-                        {/* username */}
                         <FormControl required className={classes.loginForm}>
                             <InputLabel
-                                htmlFor='loginUsername'
+                                htmlFor='logUname'
                                 classes={{
                                     root: classes.inputLabel,
                                     focused: classes.inputFocused,
@@ -116,9 +107,9 @@ class Login extends Component {
                                 Username
                             </InputLabel>
                             <Input
-                                id='loginUsername'
+                                id='logUname'
                                 type='text'
-                                loginusername={this.state.loginUsername}
+                                loginusername={this.state.logUname}
                                 classes={{
                                     underline: classes.inputUnderline,
                                 }}
@@ -132,10 +123,9 @@ class Login extends Component {
                             }
                         </FormControl>
 
-                        {/* password */}
-                        {/* form is used to overcome - [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) */}
+                     
                         <form>
-                        <FormControl required className={classes.loginForm}>
+                        <FormControl required className={classes.logFm}>
                             <InputLabel
                                 htmlFor='loginPassword'
                                 classes={{
@@ -149,7 +139,7 @@ class Login extends Component {
                                 autoComplete='off'
                                 id='loginPassword'
                                 type='password'
-                                loginpassword={this.state.loginPassword}
+                                loginpassword={this.state.logPwd}
                                 classes={{
                                     underline: classes.inputUnderline,
                                 }}
@@ -176,7 +166,7 @@ class Login extends Component {
                         <br /><br />
 
                         <Button
-                            className={classes.loginButton}
+                            className={classes.logBtn}
                             variant='contained'
                             color='primary'
                             onClick={this.loginClickHandler}

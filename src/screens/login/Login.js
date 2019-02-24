@@ -43,7 +43,7 @@ class Login extends Component {
 
     constructor() {
         super();
-        sessionStorage.setItem('access-token', '8661035776.d0fcd39.87fd934e04f84253aaf234d8bd4e4c65');
+        sessionStorage.setItem('access-token', '11222840801.f3fe1ea.54bee85b35d045aabcc9580f743c0dc2');
         // sessionStorage.removeItem('access-token');
         this.state = {
             mockUsername: 'user',
@@ -71,7 +71,7 @@ class Login extends Component {
 
         if (this.state.loginUsername && this.state.loginPassword) {
             if (this.state.mockUsername === this.state.loginUsername || this.state.mockPassword === this.state.loginPassword) {
-                sessionStorage.setItem('access-token', '8661035776.d0fcd39.87fd934e04f84253aaf234d8bd4e4c65');
+                sessionStorage.setItem('access-token', '11222840801.f3fe1ea.54bee85b35d045aabcc9580f743c0dc2');
                 this.props.history.push('/home');
             } else {
                 this.setState({incorrectCredentials: true})

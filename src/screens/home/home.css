@@ -1,0 +1,60 @@
+#cards-grid-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+}
+
+#comment-div {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.cardsGridList{
+    width: '80%',
+}
+.card{
+    max-width: 500;
+    margin-top: 20;
+    margin-bottom: 10;
+    margin-left: 10;
+}
+.cardHeaderTitle{
+    font-weight: 'bold',
+}
+.cardHeaderSubheader {
+    font-weight: 'bold';
+    font-size: 15;
+}
+.cardMedia{
+    height: 0;
+    padding-top: '56%';
+}
+.divider {
+    margin-top: 10;
+    margin-bottom: 10;
+    backgroundColor:'#c0c0c0'
+}
+.caption{
+    font-weight: 'bold';
+}
+.tags{
+    color: '#82C0FF';
+}
+.favoriteIconGridItem{
+    margin-top: 5,
+}
+.likesCount{
+    margin-top: '10%';
+    font-weight: 'bold';
+    margin-left: 5;
+}
+.commentForm{
+    width: '80%';
+}
+
+.commentButton {
+    margin-top: 15;
+    margin-left: 10;
+}
